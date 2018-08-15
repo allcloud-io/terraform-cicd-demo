@@ -50,8 +50,8 @@ func TestDemo(t *testing.T) {
 		maxRetries := 5
 		retryInterval := 5 * time.Second
 		description := fmt.Sprintf("Running command over SSH on host %s", instanceIP)
-		expectedResult := "Terraform is cool"
-		command := fmt.Sprintf("echo -n '%s'", expectedResult)
+		expectedResult := "0"
+		command := "curl -s google.com > /dev/null; echo $?"
 
 		// Run command on host over SSH.
 		retry.DoWithRetry(t, description, maxRetries, retryInterval, func() (string, error) {
