@@ -6,17 +6,13 @@ node {
     environment = "demo_env"
 
     stage('Run static analysis') {
-        steps {
-            // TODO
-        }
+        // TODO
     }
 
     stage('Run tests') {
-        steps {
-            dir("test") {
-                ansiColor('xterm') {
-                    sh "${go_cmd} test"
-                }
+        dir("test") {
+            ansiColor('xterm') {
+                sh "${go_cmd} test"
             }
         }
     }
